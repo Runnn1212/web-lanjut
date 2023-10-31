@@ -28,7 +28,7 @@ Route::get('/bio', function () {
     return view('biodata');
 });
 Route::get('nama', function () {
-    return view('nama',['name' => 'Muhammad Fandi Nurcahya']);
+    return view('nama',['name' => 'Muhammad Muthoharun']);
 });
 Route::get('nilai1', function () {
     return view('getnilai1');
@@ -71,3 +71,4 @@ Route::post('/produk/update/{id}', [ProdukController::class, 'update'])->name('p
 
 // Delete Produk
 Route::post('/produk/delete/{id}',[ProdukController::class,'destroy'])->name('produk.delete');
+
