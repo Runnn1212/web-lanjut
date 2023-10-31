@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('produk',function(Blueprint $table){
-            $table->renameColumn('stok','Stock');
+            $table->renameColumn('stok','stock');
             $table->dropColumn('supplier');
         });
     }

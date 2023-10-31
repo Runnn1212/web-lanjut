@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\LatihanController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdukController;
+use App\Models\Produk;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +57,17 @@ Route::get('home',[LatihanController::class,'home']);
 Route::get('produk',[LatihanController::class,'produk']);
 Route::get('transaksi',[LatihanController::class,'transaksi']);
 Route::get('laporan',[LatihanController::class,'laporan']);
+Route::get('tampil-produk',[ProdukController::class,'index']);
+Route::get('tambah-produk',[ProdukController::class,'create'])->name('produk.create');
+
+// Simpan Data Produk
+Route::post('tampil-produk',[ProdukController::class,'store'])->name('produk.store');
+
+// form Edit Produk
+Route::get('/produk/edit/{id}', [ProdukController::class, 'edit'])->name('produk.edit');
+
+// Update data produk
+Route::post('/produk/update/{id}', [ProdukController::class, 'update'])->name('produk.update');
+
+// Delete Produk
+Route::post('/produk/delete/{id}',[ProdukController::class,'destroy'])->name('produk.delete');
